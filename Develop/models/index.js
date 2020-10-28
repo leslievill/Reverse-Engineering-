@@ -1,11 +1,17 @@
 'use strict';
-
+//THIS COMES WITH SEQUELIZE CLI
+// file system module to read/create files
 var fs        = require('fs');
+//allows directories to work together 
 var path      = require('path');
 var Sequelize = require('sequelize');
+//extracts filename from file path
 var basename  = path.basename(module.filename);
+//allows path variable set accessible and make external calls
 var env       = process.env.NODE_ENV || 'development';
+// accessing utilities in config.json
 var config    = require(__dirname + '/../config/config.json')[env];
+//assign empty object to database
 var db        = {};
 
 if (config.use_env_variable) {
