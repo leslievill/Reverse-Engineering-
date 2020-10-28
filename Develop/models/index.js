@@ -33,7 +33,8 @@ fs
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });
-
+//returns array containing keys of db while forEach changes the array passed to it
+//if statements saying modelName is a key in the db and will associate it with it's according model in the db
 Object.keys(db).forEach(function(modelName) {
   if (db[modelName].associate) {
     db[modelName].associate(db);
