@@ -10,11 +10,15 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+// lets server know what post/put request objects as strings/arrays
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
+// sesseion data saved 
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+//initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
