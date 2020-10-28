@@ -10,6 +10,24 @@ THEN I understand the codebase.
 ```
 
 
+## Installation
+
+To install dependencies run:
+```
+npm install
+```
+To run locally with node:
+```
+node server.js
+```
+
+Create a new database on MySQL called "passport_demo".
+```
+CREATE DATABASE IF NOT EXISTS passport_demo;
+```
+
+
+
 ## The Nitty-Gritty
 
 
