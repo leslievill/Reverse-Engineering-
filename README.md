@@ -9,7 +9,7 @@ WHEN I follow the walkthrough
 THEN I understand the codebase.
 ```
 ## Sign Up Page Image
-![Site gif](signupform.png)
+![Site gif](./assets/signupform.png)
 
 
 
