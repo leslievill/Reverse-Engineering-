@@ -13,18 +13,22 @@ var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 //assign empty object to database
 var db        = {};
-
+// making sure use_env_variable is a key
 if (config.use_env_variable) {
+  //if it is a key when defined env variable is created
   var sequelize = new Sequelize(process.env[config.use_env_variable]);
 } else {
+  //when it ISNT a key that was defined when env variable was created
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
 fs
+//this returns the array with files in specified directory (__dirname)
   .readdirSync(__dirname)
+  //filter returns items that are true passeed into new array
   .filter(function(file) {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
+  //passes array item to a cb function
   .forEach(function(file) {
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
